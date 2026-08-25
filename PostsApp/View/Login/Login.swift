@@ -8,7 +8,17 @@
 import UIKit
 
 class Login: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
+        mainStackView.layer.cornerRadius=15
+        userNameText.layer.cornerRadius=10
+        passwardText.layer.cornerRadius=10
+       //SwapToMainScreen() 
+    }
+
+    let ViewModel = AccountViewModel()
     @IBOutlet var mainStackView: UIStackView!
     @IBOutlet var userNameText: UITextField!
     @IBOutlet var passwardText: UITextField!
@@ -23,26 +33,50 @@ class Login: UIViewController {
     @IBAction func NextButton(_ sender: UIButton) {
         //print(ViewModel.accounts)
         ViewModel.LoadAccounts()
-        if (ViewModel.accounts.contains
-            { account in
+        if (ViewModel.accounts.contains{
+            account in            
             account.userName == userNameText.text?.trimmingCharacters(in: .whitespacesAndNewlines)  &&
-            account.passward == passwardText.text?.trimmingCharacters(in: .whitespacesAndNewlines)     })
-        {
-           print("Valid User")
-        }else {print("invalid User")}
+            account.passward == passwardText.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        }){
+            
+            SwapToMainScreen()
+            
+        }
+        
+        else {
+            ShowInvalidAlert()
+            print("invalid User")
+        }
     }
     
-    let ViewModel = AccountViewModel()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func ShowInvalidAlert(){
+        let alert = UIAlertController(
+            title: "Error",
+            message: "Invalid UserName or Passward",
+            preferredStyle: .alert
+        )
 
-        mainStackView.layer.cornerRadius=15
-        userNameText.layer.cornerRadius=10
-        passwardText.layer.cornerRadius=10
+        let Close = UIAlertAction(
+            title: "Close",
+            style: .cancel
+        )
+
+        alert.addAction(Close)
+
+        present(alert, animated: true)
+    }
+    
+    
+    private func SwapToMainScreen(){
+        let mainvc = MainView()
+        let navigation = UINavigationController(rootViewController: mainvc)
+        guard let window = self.view.window else { return }
+            
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve) {
+                window.rootViewController = navigation
+            }
     }
 
-
-
+    
 
 }

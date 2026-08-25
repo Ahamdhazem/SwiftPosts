@@ -8,22 +8,54 @@
 import UIKit
 
 class MainView: UIViewController {
-
+    let buttonsText = ["Posts","ToDos","Users"]
+    @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "MainCollectionViewCell", bundle: nil)
+        collectionView.register(
+            nib,
+            forCellWithReuseIdentifier: "MainCollectionViewCell"
+        )
+
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension MainView:UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        buttonsText.count
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as!  MainCollectionViewCell
+        let text = buttonsText[indexPath.section]
+        cell.label.text = text
+        
+        return cell
+    }
+    
+    
+    
+}
+extension MainView:UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let buttontext = buttonsText[indexPath.section]
+            
+        let vc = UserPostToDoViewController(titleText: buttontext)
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+        
+    }
+    }
+    
+    
+
