@@ -10,8 +10,11 @@ import UIKit
 class UserPostToDoDetailsViewController: UIViewController {
 
     @IBOutlet var label: UILabel!
+    @IBOutlet var idlabel: UILabel!
+    var id = -1
     var secreenName : EnumScreens
-    init(screenName: EnumScreens)  {
+    init(screenName: EnumScreens , id : Int)  {
+        self.id = id
         self.secreenName = screenName
         super.init(nibName: "UserPostToDoDetailsViewController", bundle: nil)
         
@@ -26,6 +29,7 @@ class UserPostToDoDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         self.label.text = secreenName.rawValue
+        self.idlabel.text = String(self.id)
         super.viewDidLoad()
     }
 

@@ -8,6 +8,9 @@
 import UIKit
 
 class UserPostTodoTableViewCell: UITableViewCell {
+    
+    public var id = -1;
+
     @IBOutlet var label: UILabel!
     
     override func awakeFromNib() {
@@ -20,5 +23,7 @@ class UserPostTodoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+
     
 }

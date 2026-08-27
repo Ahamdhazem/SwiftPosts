@@ -54,8 +54,8 @@ extension MainView:UICollectionViewDelegate{
         indexPath.section == 1 ? .todos :
             .users
         
-        let vc =  UserPostToDoViewController(screenName: secreenName)
-        
+        let vc =  UserPostToDoViewController(nibName: "UserPostToDoViewController", bundle: nil)
+        vc.viewModel = UserPostTodoViewModel(secreenName: secreenName)
         navigationController?.pushViewController(vc, animated: true)
     }
     

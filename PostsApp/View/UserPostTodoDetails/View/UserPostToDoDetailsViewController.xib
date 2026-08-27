@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserPostToDoDetailsViewController" customModule="PostsApp" customModuleProvider="target">
             <connections>
+                <outlet property="idlabel" destination="VR2-Tg-Gxl" id="XLb-Wa-4c5"/>
                 <outlet property="label" destination="FfD-dC-ct0" id="Jgs-iU-u0e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,14 +26,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR2-Tg-Gxl">
+                    <rect key="frame" x="175" y="501" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="FfD-dC-ct0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="e7t-Oz-e4e"/>
-                <constraint firstItem="FfD-dC-ct0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oAi-q0-wrB"/>
+                <constraint firstItem="FfD-dC-ct0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HuN-Za-yP5"/>
+                <constraint firstItem="FfD-dC-ct0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="K47-DR-2I0"/>
             </constraints>
-            <point key="canvasLocation" x="141" y="154"/>
+            <point key="canvasLocation" x="139.69465648854961" y="153.52112676056339"/>
         </view>
     </objects>
     <resources>
