@@ -16,7 +16,7 @@ import Foundation
 //    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 //},.....]
 
-struct Post {
+struct Post : Codable {
  let  userId : Int
  let  id     : Int
  let  title  : String

@@ -43,18 +43,21 @@ extension MainView:UICollectionViewDataSource{
     
 }
 extension MainView:UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)  {
         
-        let buttontext = buttonsText[indexPath.section]
-            
-        let vc = UserPostToDoViewController(titleText: buttontext)
+
+        
+        let secreenName : EnumScreens =
+        
+        indexPath.section == 0 ? .posts :
+        indexPath.section == 1 ? .todos :
+            .users
+        
+        let vc =  UserPostToDoViewController(screenName: secreenName)
         
         navigationController?.pushViewController(vc, animated: true)
-        
-        
-        
-        
     }
+    
     }
     
     

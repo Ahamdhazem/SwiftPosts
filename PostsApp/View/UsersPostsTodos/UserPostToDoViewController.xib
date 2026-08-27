@@ -10,8 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserPostToDoViewController" customModule="PostsApp" customModuleProvider="target">
             <connections>
-                <outlet property="taitelLabel" destination="Oaa-I4-7XO" id="jRV-fb-FpH"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="tabelView" destination="Inr-Ga-Wlv" id="cBs-oR-yP7"/>
+                <outlet property="taitelLabel" destination="Oaa-I4-7XO" id="pW5-Xp-KmC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="kcF-7e-byY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,9 +29,12 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Inr-Ga-Wlv">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Inr-Ga-Wlv">
                             <rect key="frame" x="0.0" y="27.666666666666686" width="393" height="638.33333333333326"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="nGp-vM-zxV"/>
+                                <outlet property="delegate" destination="-1" id="Guo-gh-h06"/>
+                            </connections>
                         </tableView>
                     </subviews>
                 </stackView>
