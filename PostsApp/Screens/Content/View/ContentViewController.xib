@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserPostToDoViewController" customModule="PostsApp" customModuleProvider="target">
             <connections>
+                <outlet property="HeadTitle" destination="Oaa-I4-7XO" id="6eC-b3-IOa"/>
                 <outlet property="tabelView" destination="Inr-Ga-Wlv" id="cBs-oR-yP7"/>
                 <outlet property="taitelLabel" destination="Oaa-I4-7XO" id="pW5-Xp-KmC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="kcF-7e-byY"/>
@@ -20,17 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XeL-bS-d2q">
-                    <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XeL-bS-d2q">
+                    <rect key="frame" x="15" y="118" width="363" height="666"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-I4-7XO">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="27.666666666666668"/>
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="27.666666666666668"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Inr-Ga-Wlv">
-                            <rect key="frame" x="0.0" y="27.666666666666686" width="393" height="638.33333333333326"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Inr-Ga-Wlv">
+                            <rect key="frame" x="0.0" y="47.666666666666686" width="363" height="618.33333333333326"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="nGp-vM-zxV"/>
                                 <outlet property="delegate" destination="-1" id="Guo-gh-h06"/>
@@ -43,8 +45,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XeL-bS-d2q" secondAttribute="bottom" id="HVX-jD-b8j"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XeL-bS-d2q" secondAttribute="trailing" id="UZH-Dm-QJa"/>
-                <constraint firstItem="XeL-bS-d2q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ygn-iq-Lw4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XeL-bS-d2q" secondAttribute="trailing" constant="15" id="UZH-Dm-QJa"/>
+                <constraint firstItem="XeL-bS-d2q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Ygn-iq-Lw4"/>
                 <constraint firstItem="XeL-bS-d2q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q35-d2-Mxe"/>
             </constraints>
             <point key="canvasLocation" x="140" y="121"/>

@@ -25,13 +25,13 @@ import Foundation
 //        }
 //    }, ..... ]
 
-struct User : Codable {
+class User : BaseModel,Decodable {
     
-    let id: Int
-    let name: String
-    let username: String
-    let email: String
-    let address: Address
+    let id: Int!
+    let name: String!
+    let username: String!
+    let email: String!
+    let address: Address!
     
  
 

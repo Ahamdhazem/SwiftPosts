@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserPostToDoDetailsViewController: UIViewController {
+class DetailsViewController: UIViewController {
 
     @IBOutlet var label: UILabel!
     @IBOutlet var idlabel: UILabel!
@@ -16,7 +16,7 @@ class UserPostToDoDetailsViewController: UIViewController {
     init(screenName: EnumScreens , id : Int)  {
         self.id = id
         self.secreenName = screenName
-        super.init(nibName: "UserPostToDoDetailsViewController", bundle: nil)
+        super.init(nibName: "DetailsViewController", bundle: nil)
         
 
     }

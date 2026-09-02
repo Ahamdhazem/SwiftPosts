@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserPostTodoTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="ContentCell" customModule="PostsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="344" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HAo-hK-2G8">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="120"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiz-Hf-4vG">
+                                <rect key="frame" x="15" y="15.000000000000004" width="314" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXv-QJ-l0C">
+                                <rect key="frame" x="15" y="63.333333333333343" width="314" height="41.666666666666657"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="SubTitel  ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="ArialNarrow"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2130624045" green="0.4475112792" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="15" bottom="15" trailing="15"/>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" red="0.2130624045" green="0.4475112792" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="HAo-hK-2G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H08-bG-exK"/>
+                    <constraint firstItem="HAo-hK-2G8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PLz-ra-nre"/>
+                    <constraint firstAttribute="trailing" secondItem="HAo-hK-2G8" secondAttribute="trailing" id="Rb5-vn-haM"/>
+                    <constraint firstAttribute="bottom" secondItem="HAo-hK-2G8" secondAttribute="bottom" id="YZ8-4R-2t9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="SubTitle" destination="pXv-QJ-l0C" id="Yc3-My-siU"/>
+                <outlet property="Title" destination="oiz-Hf-4vG" id="UtE-kR-YMK"/>
+            </connections>
+            <point key="canvasLocation" x="157.25190839694656" y="147.18309859154931"/>
+        </tableViewCell>
+    </objects>
+</document>

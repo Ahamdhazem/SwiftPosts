@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainCollectionViewCell" id="gTV-IL-0wX" customClass="MainCollectionViewCell" customModule="PostsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="151" height="139"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="151" height="139"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kr4-To-ViM">
+                        <rect key="frame" x="3" y="3" width="145" height="133"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-KV-yjj">
+                                <rect key="frame" x="44" y="0.0" width="57" height="66.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-tC-jKL">
+                                <rect key="frame" x="43.666666666666657" y="66.666666666666686" width="58" height="66.333333333333314"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YSq-eI-MEn">
+                                        <rect key="frame" x="9" y="6.6666666666666607" width="40" height="39.666666666666671"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Vi6-Ow-2bT"/>
+                                            <constraint firstAttribute="width" constant="40" id="v73-Sz-D3A"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YSq-eI-MEn" firstAttribute="centerX" secondItem="aqj-tC-jKL" secondAttribute="centerX" id="6n3-wj-RzB"/>
+                                    <constraint firstAttribute="bottom" secondItem="YSq-eI-MEn" secondAttribute="bottom" constant="20" id="Q2K-Eb-8VT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2130624045" green="0.4475112792" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Kr4-To-ViM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="6qz-zL-jZv"/>
+                <constraint firstAttribute="trailing" secondItem="Kr4-To-ViM" secondAttribute="trailing" constant="3" id="TQ5-ct-bps"/>
+                <constraint firstAttribute="bottom" secondItem="Kr4-To-ViM" secondAttribute="bottom" constant="3" id="d7w-7L-nKx"/>
+                <constraint firstItem="Kr4-To-ViM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="ekG-Qg-VPG"/>
+            </constraints>
+            <size key="customSize" width="151" height="139"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="image" destination="YSq-eI-MEn" id="XNA-tB-bbL"/>
+                <outlet property="titelLabel" destination="QS8-KV-yjj" id="D6c-cd-bDj"/>
+            </connections>
+            <point key="canvasLocation" x="-37.404580152671755" y="143.3098591549296"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
+    </resources>
+</document>
