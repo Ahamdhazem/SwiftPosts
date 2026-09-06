@@ -13,18 +13,18 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var image: UIImageView!
     
+    var screen : EnumScreens!
     var ViewModel : MainCellViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //	self.ViewModel = viewModel
         
     }
     
     func Set(){
-        
-        titelLabel.text = ViewModel.setTitel()
-        image.image = ViewModel.SetImager()
+        titelLabel.text = ViewModel.title
+        image.image = ViewModel.uiImage
+        screen = ViewModel.screenName
     }
     
 

@@ -25,13 +25,13 @@
                     <rect key="frame" x="15" y="118" width="363" height="666"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-I4-7XO">
-                            <rect key="frame" x="0.0" y="0.0" width="363" height="27.666666666666668"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Inr-Ga-Wlv">
-                            <rect key="frame" x="0.0" y="47.666666666666686" width="363" height="618.33333333333326"/>
+                            <rect key="frame" x="0.0" y="50" width="363" height="616"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="nGp-vM-zxV"/>

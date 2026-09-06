@@ -8,17 +8,19 @@
 import UIKit
 
 class Login: UIViewController {
-    
+    let viewModel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mainStackView.layer.cornerRadius=15
         userNameText.layer.cornerRadius=10
         passwardText.layer.cornerRadius=10
-       //SwapToMainScreen() 
+       //SwapToMainScreen()
+        
+        
     }
 
-    let ViewModel = AccountViewModel()
+    let ViewModel = LoginViewModel()
     @IBOutlet var mainStackView: UIStackView!
     @IBOutlet var userNameText: UITextField!
     @IBOutlet var passwardText: UITextField!
@@ -26,7 +28,6 @@ class Login: UIViewController {
 
         passwardText.isSecureTextEntry.toggle()
         let imageName = passwardText.isSecureTextEntry ? "eye.slash.fill" : "eye.slash.circle.fill"
-            
         (sender as AnyObject).setImage(UIImage(systemName: imageName), for: .normal)
     }
     

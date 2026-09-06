@@ -27,11 +27,16 @@ class ContentCellViewModel{
             self.title = user.username
             self.subTitle = user.email
         }
-        else {
+        else if (data is ToDo) {
             let todo = (data as!ToDo)
             self.id = todo.id
             self.title = todo.completed ? "✅ Completed" : "❌ Not Completed"
             self.subTitle = todo.title
+        } else {
+            self.id = -1
+            self.title = ""
+            self.subTitle = ""
+            
         }
          
         

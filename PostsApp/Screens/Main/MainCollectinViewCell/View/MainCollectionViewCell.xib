@@ -10,26 +10,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MainCollectionViewCell" id="gTV-IL-0wX" customClass="MainCollectionViewCell" customModule="PostsApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="151" height="139"/>
+            <rect key="frame" x="0.0" y="0.0" width="169" height="152"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="151" height="139"/>
+                <rect key="frame" x="0.0" y="0.0" width="169" height="152"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kr4-To-ViM">
-                        <rect key="frame" x="3" y="3" width="145" height="133"/>
+                        <rect key="frame" x="3" y="3" width="163" height="146"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-KV-yjj">
-                                <rect key="frame" x="44" y="0.0" width="57" height="66.666666666666671"/>
+                                <rect key="frame" x="53" y="0.0" width="57" height="73"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-tC-jKL">
-                                <rect key="frame" x="43.666666666666657" y="66.666666666666686" width="58" height="66.333333333333314"/>
+                                <rect key="frame" x="52.666666666666657" y="73" width="58" height="73"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YSq-eI-MEn">
-                                        <rect key="frame" x="9" y="6.6666666666666607" width="40" height="39.666666666666671"/>
+                                        <rect key="frame" x="9.0000000000000071" y="13.333333333333336" width="40" height="39.666666666666671"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Vi6-Ow-2bT"/>
@@ -61,7 +61,7 @@
                 <constraint firstAttribute="bottom" secondItem="Kr4-To-ViM" secondAttribute="bottom" constant="3" id="d7w-7L-nKx"/>
                 <constraint firstItem="Kr4-To-ViM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="ekG-Qg-VPG"/>
             </constraints>
-            <size key="customSize" width="151" height="139"/>
+            <size key="customSize" width="169" height="152"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                     <integer key="value" value="12"/>
@@ -71,7 +71,7 @@
                 <outlet property="image" destination="YSq-eI-MEn" id="XNA-tB-bbL"/>
                 <outlet property="titelLabel" destination="QS8-KV-yjj" id="D6c-cd-bDj"/>
             </connections>
-            <point key="canvasLocation" x="-37.404580152671755" y="143.3098591549296"/>
+            <point key="canvasLocation" x="-23.664122137404579" y="202.11267605633805"/>
         </collectionViewCell>
     </objects>
     <resources>

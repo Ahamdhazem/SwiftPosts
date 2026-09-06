@@ -16,10 +16,49 @@ import Foundation
 //    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 //},.....]
 
-class Post : BaseModel,Decodable {
+class Post : BaseModel {
  let  userId : Int!
  let  id     : Int!
  let  title  : String!
  let  body   : String!
+    
+    enum CodingKeys: String, CodingKey {
+        case userId
+        case id
+        case title
+        case body
+    }
+    required init(from decoder: Decoder) throws {
+
+        let container = try decoder.container(
+        keyedBy: CodingKeys.self
+        )
+
+        self.userId = try container.decode(
+            Int.self,
+            forKey: .userId
+        )
+
+        self.id = try container.decode(
+            Int.self,
+            forKey: .id
+        )
+
+        self.title = try container.decode(
+            String.self,
+            forKey: .title
+        )
+
+        self.body = try container.decode(
+            String.self,
+            forKey: .body
+        )
+
+        try super.init(from: decoder)
+    }
+
+
+    
+ 
     
 }

@@ -46,18 +46,11 @@ extension MainView:UICollectionViewDataSource{
 }
 extension MainView:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)  {
-        
-        let index = indexPath.section * 2 + indexPath.item
-        
-        let secreenName : EnumScreens =
-        
-        index == 0 ? .posts :
-        index == 1 ? .todos :
-            .users
-        print(secreenName.rawValue)
+  
+        let cell = collectionView.cellForItem(at: indexPath) as! MainCollectionViewCell
         
         let vc =  ContentViewController(nibName: "ContentViewController", bundle: nil)
-        vc.viewModel = ContentViewModel(secreenName: secreenName)
+        vc.viewModel = ContentViewModel(secreenName: cell.ViewModel.screenName)
         navigationController?.pushViewController(vc, animated: true)
     }
     

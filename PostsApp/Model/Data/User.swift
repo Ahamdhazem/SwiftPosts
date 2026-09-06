@@ -25,7 +25,7 @@ import Foundation
 //        }
 //    }, ..... ]
 
-class User : BaseModel,Decodable {
+class User : BaseModel {
     
     let id: Int!
     let name: String!
@@ -33,9 +33,28 @@ class User : BaseModel,Decodable {
     let email: String!
     let address: Address!
     
- 
+    enum CodingKeys: String, CodingKey {
+            case id
+            case name
+            case username
+            case email
+            case address
+        }
 
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+
+            self.id = try container.decode(Int.self, forKey: .id)
+            self.name = try container.decode(String.self, forKey: .name)
+            self.username = try container.decode(String.self, forKey: .username)
+            self.email = try container.decode(String.self, forKey: .email)
+            self.address = try container.decode(Address.self, forKey: .address)
+
+            try super.init(from: decoder)
+        }
 }
+
+
 
 struct Address: Codable {
     let street: String

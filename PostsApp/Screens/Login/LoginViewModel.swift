@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class AccountViewModel {
+class LoginViewModel {
     
     public var accounts: [Account] = []
     public func LoadAccounts() {

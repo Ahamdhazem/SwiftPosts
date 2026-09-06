@@ -14,22 +14,27 @@ class ContentViewController: UIViewController {
     @IBOutlet var taitelLabel: UILabel!
     
     @IBOutlet var tabelView: UITableView!
-    
+    var data : [BaseModel] = []
     var viewModel : ContentViewModel!
     
     override func viewDidLoad  ()  {
         super.viewDidLoad()
         Set()
+        viewModel.LoadData()
         TabelViewRegister()
-        Task {
-            await LoadTabelView()
-            tabelView.reloadData()
-        }
         
-        
+    }
+    
+    private func setupBindings() {
+
     }
     func Set(){
         self.HeadTitle.text = viewModel.screenName.rawValue
+        viewModel.onDataUpdated = { [weak self] in
+            self?.data = self?.viewModel.data ?? []
+            self?.tabelView.reloadData()
+        }
+      
     }
     func TabelViewRegister () {
         let nib = UINib(nibName: "ContentCell", bundle: nil)
@@ -40,13 +45,7 @@ class ContentViewController: UIViewController {
         )
     }
 
-    
-    var data : [BaseModel] = []
-    
-    func LoadTabelView () async {
-        self.data = await viewModel.LoadTabelView()
-        tabelView.reloadData()
-    }
+
     
 }
     
@@ -63,7 +62,12 @@ class ContentViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
+
+            
             let cell = tabelView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
+            
+            
+            
             cell.viewModel = ContentCellViewModel(data[indexPath.section])
             cell.Set()
             
@@ -76,26 +80,28 @@ class ContentViewController: UIViewController {
 
 extension ContentViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //viewModel.screenName
-        
-//        let vc =  DetailsViewController(nibName: "DetailsViewController", bundle: nil)
-//      //DetailsViewController  vc.viewModel = UserPostTodoViewModel(secreenName: secreenName)
-//        navigationController?.pushViewController(vc, animated: true)
-        
+
+       
+        let vc : BaseDetailsSecreen!
+        switch (viewModel.screenName){
+        case .posts:   vc = PostDetailsViewController()
+        case .users:   vc = UserDetailsViewController()
+        case .todos:   vc = ToDoDetailsViewController()
+        case .none: vc = BaseDetailsSecreen()
+            
+        }
+        vc.viewModel = DetailsViewModel(data[indexPath.section], viewModel.screenName)
+        vc.modalPresentationStyle =  .fullScreen
+        present(vc, animated: true)
+       
     
      
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
-//        
-//        //tabelView.reloadData()
-//    }
-////    
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        tabelView.reloadData()
-//    }
+
 }
-    
+
+
+
 
 

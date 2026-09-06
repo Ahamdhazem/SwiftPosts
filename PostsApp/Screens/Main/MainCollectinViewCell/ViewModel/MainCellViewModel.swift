@@ -12,35 +12,37 @@ import UIKit
 class MainCellViewModel{
     
 
-    @IBOutlet var titel: UILabel!
-    @IBOutlet var image: UIImageView!
 
-    
+
+    let uiImage :UIImage!
+    let title : String!
     let indexPath :IndexPath!
     let index : Int!
+    let screenName:EnumScreens!
     init(_ indexPath : IndexPath) {
         self.indexPath = indexPath
+        
         index = indexPath.section * 2 + indexPath.item
-    }
-    func SetImager() -> UIImage! {
-       
-        switch index {
-        case 0:
-            return UIImage(systemName: "doc.text")
-            
-        case 1:
-            return UIImage(systemName:"checkmark.circle" )
-            
-        case 2:
-            return UIImage(systemName: "person.3")
-        default: return UIImage(systemName: "checkmark.circle")
-        }
         
+        self.screenName = self.index == 0 ? .posts :
+                          self.index == 1 ? .todos :
+                          .users
+        
+        var imageName : String!
+        
+        imageName = index == 0 ?  "doc.text" :
+                    index == 1 ?  "checkmark.circle" :
+                    "person.3"
+        
+        uiImage = UIImage(systemName: imageName)
+        
+        title = CellList[index]
+
     }
+
+ 
     
-    func setTitel () -> String {
-        
-        return CellList[index]
-    }
+ 
+    
 
 }

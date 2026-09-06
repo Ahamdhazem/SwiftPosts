@@ -7,5 +7,8 @@
 
 import Foundation
 
-class BaseModel{}
+class BaseModel:Decodable{
+    required init(from decoder: Decoder) throws {}
+
+}
     
