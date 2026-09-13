@@ -30,7 +30,6 @@ extension MainView:UICollectionViewDataSource{
         let startIndex = section * 2
         let remainingItems = CellList.count - startIndex
         return min(2, remainingItems)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

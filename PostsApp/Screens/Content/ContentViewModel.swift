@@ -17,38 +17,39 @@ class ContentViewModel {
         }
     }
     
-    let Servies : ContentServeses!
+    let servies : ContentServeses!
+    
     init(secreenName : EnumScreens){
         self.screenName = secreenName
-         Servies = ContentServeses()
+         servies = ContentServeses()
  
         }
         
         
-        func LoadData(){
+        func loadData(){
             Task {
-                let fetchedData = await LoadTabelView()
+                let fetchedData = await loadTabelView()
                 await MainActor.run {
                     self.data = fetchedData
                 }
         }
         
         
-        func LoadUsers() async -> [User]{
-            return await self.Servies.FetchData("users")
+        func loadUsers() async -> [User]{
+            return await self.servies.FetchData("users")
         }
-        func LoadPosts() async ->[Post]{
-            return await self.Servies.FetchData("posts")
+        func loadPosts() async ->[Post]{
+            return await self.servies.FetchData("posts")
         }
-        func LoadTodos() async ->[ToDo]{
-            return await self.Servies.FetchData("todos")
+        func loadTodos() async ->[ToDo]{
+            return await self.servies.FetchData("todos")
         }
         
-        func LoadTabelView() async -> [BaseModel]{
+        func loadTabelView() async -> [BaseModel]{
             switch screenName {
-            case .posts: return await LoadPosts()
-            case .users: return await LoadUsers()
-            case .todos: return await LoadTodos()
+            case .posts: return await loadPosts()
+            case .users: return await loadUsers()
+            case .todos: return await loadTodos()
             default:
                 print("default")
             }

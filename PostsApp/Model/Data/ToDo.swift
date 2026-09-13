@@ -19,13 +19,12 @@ import Foundation
 
 class ToDo : BaseModel {
     let userId    : Int!
-    let id        : Int!
     let title     : String!
     let completed : Bool!
     
     enum CodingKeys: String, CodingKey {
         case userId
-        case id
+
         case title
         case completed
     }
@@ -40,10 +39,6 @@ class ToDo : BaseModel {
             forKey: .userId
         )
 
-        self.id = try container.decode(
-            Int.self,
-            forKey: .id
-        )
 
         self.title = try container.decode(
             String.self,

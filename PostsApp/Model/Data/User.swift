@@ -27,14 +27,12 @@ import Foundation
 
 class User : BaseModel {
     
-    let id: Int!
     let name: String!
     let username: String!
     let email: String!
     let address: Address!
     
     enum CodingKeys: String, CodingKey {
-            case id
             case name
             case username
             case email
@@ -43,8 +41,6 @@ class User : BaseModel {
 
         required init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-
-            self.id = try container.decode(Int.self, forKey: .id)
             self.name = try container.decode(String.self, forKey: .name)
             self.username = try container.decode(String.self, forKey: .username)
             self.email = try container.decode(String.self, forKey: .email)

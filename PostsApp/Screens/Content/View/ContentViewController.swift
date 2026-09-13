@@ -10,33 +10,33 @@ import UIKit
 
 class ContentViewController: UIViewController {
     // @IBOutlet var view: UIView!
-    @IBOutlet var HeadTitle: UILabel!
+    var viewModel : ContentViewModel!
+    @IBOutlet var headTitle: UILabel!
     @IBOutlet var taitelLabel: UILabel!
-    
     @IBOutlet var tabelView: UITableView!
     var data : [BaseModel] = []
-    var viewModel : ContentViewModel!
+
     
     override func viewDidLoad  ()  {
         super.viewDidLoad()
-        Set()
-        viewModel.LoadData()
-        TabelViewRegister()
+        set()
+        viewModel.loadData()
+        tabelViewRegister()
         
     }
     
     private func setupBindings() {
 
     }
-    func Set(){
-        self.HeadTitle.text = viewModel.screenName.rawValue
+    func set(){
+        self.headTitle.text = viewModel.screenName.rawValue
         viewModel.onDataUpdated = { [weak self] in
             self?.data = self?.viewModel.data ?? []
             self?.tabelView.reloadData()
         }
       
     }
-    func TabelViewRegister () {
+    func tabelViewRegister () {
         let nib = UINib(nibName: "ContentCell", bundle: nil)
         
         tabelView.register(
@@ -66,10 +66,10 @@ class ContentViewController: UIViewController {
             
             let cell = tabelView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
             
-            
-            
-            cell.viewModel = ContentCellViewModel(data[indexPath.section])
-            cell.Set()
+            let data =  data[indexPath.section]
+            cell.configure(vm: ContentCellViewModel(data , data.id , viewModel.screenName ))
+//            cell.viewModel = ContentCellViewModel(data , data.id , viewModel.screenName )
+           // cell.Set()
             
             return cell
 
@@ -80,17 +80,9 @@ class ContentViewController: UIViewController {
 
 extension ContentViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-       
-        let vc : BaseDetailsSecreen!
-        switch (viewModel.screenName){
-        case .posts:   vc = PostDetailsViewController()
-        case .users:   vc = UserDetailsViewController()
-        case .todos:   vc = ToDoDetailsViewController()
-        case .none: vc = BaseDetailsSecreen()
-            
-        }
+        let vc = DetailsViewController()
         vc.viewModel = DetailsViewModel(data[indexPath.section], viewModel.screenName)
+
         vc.modalPresentationStyle =  .fullScreen
         present(vc, animated: true)
        
@@ -100,6 +92,8 @@ extension ContentViewController:UITableViewDelegate{
     
 
 }
+
+extension ContentViewController:UICollectionViewDelegateFlowLayout{}
 
 
 

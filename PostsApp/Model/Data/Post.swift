@@ -18,13 +18,11 @@ import Foundation
 
 class Post : BaseModel {
  let  userId : Int!
- let  id     : Int!
  let  title  : String!
  let  body   : String!
     
     enum CodingKeys: String, CodingKey {
         case userId
-        case id
         case title
         case body
     }
@@ -39,10 +37,7 @@ class Post : BaseModel {
             forKey: .userId
         )
 
-        self.id = try container.decode(
-            Int.self,
-            forKey: .id
-        )
+
 
         self.title = try container.decode(
             String.self,

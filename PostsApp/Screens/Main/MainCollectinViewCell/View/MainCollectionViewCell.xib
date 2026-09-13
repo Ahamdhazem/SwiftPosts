@@ -26,21 +26,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-tC-jKL">
-                                <rect key="frame" x="52.666666666666657" y="73" width="58" height="73"/>
+                                <rect key="frame" x="46.666666666666657" y="73" width="70" height="73"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YSq-eI-MEn">
-                                        <rect key="frame" x="9.0000000000000071" y="13.333333333333336" width="40" height="39.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.3333333333333357" width="70" height="67.666666666666657"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Vi6-Ow-2bT"/>
-                                            <constraint firstAttribute="width" constant="40" id="v73-Sz-D3A"/>
+                                            <constraint firstAttribute="width" constant="70" id="aOQ-lu-TOO"/>
                                         </constraints>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="YSq-eI-MEn" firstAttribute="centerX" secondItem="aqj-tC-jKL" secondAttribute="centerX" id="6n3-wj-RzB"/>
-                                    <constraint firstAttribute="bottom" secondItem="YSq-eI-MEn" secondAttribute="bottom" constant="20" id="Q2K-Eb-8VT"/>
+                                    <constraint firstItem="YSq-eI-MEn" firstAttribute="leading" secondItem="aqj-tC-jKL" secondAttribute="leading" id="JxN-hN-a0i"/>
+                                    <constraint firstAttribute="bottom" secondItem="YSq-eI-MEn" secondAttribute="bottom" constant="5" id="Vta-00-bLc"/>
+                                    <constraint firstItem="YSq-eI-MEn" firstAttribute="top" secondItem="aqj-tC-jKL" secondAttribute="top" id="Whg-CG-AHq"/>
+                                    <constraint firstAttribute="trailing" secondItem="YSq-eI-MEn" secondAttribute="trailing" id="h9g-3S-tHV"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -15,8 +15,7 @@ class ContentServeses {
     let url = "https://jsonplaceholder.typicode.com/"
     
     
-    
-    func FetchData<T: Decodable>(_ urlExtension: String) async -> [T] {
+    func  FetchData<T: Decodable>(_ urlExtension: String) async -> [T] {
             do {
                 let data = try await AF.request(
                     url + urlExtension,
